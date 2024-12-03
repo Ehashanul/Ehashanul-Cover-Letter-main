@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="black">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ehashanul Akter</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap');
+
+        .domine-font {
+            font-family: "Domine", serif;
+        }
+
+        .image-container {
+            perspective: 1000px;
+        }
+
+        .image-tilt {
+            transform-style: preserve-3d;
+            transition: transform 0.1s ease-out;
+        }
+    </style>
+</head>
+
+<body
+    class="domine-font flex flex-col-reverse md:flex-row w-11/12 md:w-8/12 mx-auto leading-relaxed justify-between items-center">
+    <main class="*:text-xl basis-1/2">
+        <header class="mt-10">
+            <div class="pb-10 *:pb-2">
+                <h1 class="text-2xl">UI/UX Client Assistance Intern</h1>
+                <a href="https://ibos.io/">           <!-- Company URL -->
+                    <h2 class="text-green-500">Akij iBos</h2>  <!-- Company Name -->
+                </a>
+            </div>
+            <div class="*:pb-2">
+                <h2 class="text-2xl">Contact Details</h2>                   
+                <p>Home: Agargaon, Taltola, Dhaka</p>                               <!-- Edit -->
+                <p>Phone: +8801621-175408</p>                              
+                <a href="mailto:ehashanula@gmail.com" target="_blank">Email: ehashanula@gmail.com</a>
+            </div>
+        </header>
+        <article>
+            <h1 class="py-10">To Whom It May Concern,</h1>
+
+            <h2 class="leading-relaxed">I am thrilled to apply for the UI/UX Designer position at Kite Games Studio. 
+                As a Computer Science and Engineering graduate from North South University, 
+                I have cultivated a strong foundation in design principles and user-centric methodologies, 
+                and I am eager to bring my expertise to your team.</h2>
+
+            <h2 class="leading-relaxed pt-10">In my current role as a UI/UX Client Assistance Intern at Akij iBOS, 
+                I collaborate closely with clients to transform complex requirements into intuitive and impactful designs.
+                 My proficiency in Figma enables me to deliver visually appealing and functional user interfaces tailored to enhance user experiences.</h2>
+
+            <h2 class="leading-relaxed pt-10">My technical background as a Computer Science Engineer provides me with a
+                unique perspective on the practical implementation of UX principles. This enables me to design with both
+                user experience and technical feasibility in mind, ensuring a seamless integration of design and
+                functionality.</h2>
+
+            <h2 class="leading-relaxed pt-10">Kite Games Studio’s innovative approach to software development inspires me to contribute by designing user interfaces
+                 that align with your creative vision and enhance user engagement. 
+                 My fluency in English ensures effective communication within dynamic, collaborative environments.</h2>
+
+            <h2 class="leading-relaxed pt-10"> Additionally, I am grateful to have a recommendation from Tasnim Ahmed, Co-founder of Kite Games Studio</h2>
+
+            <div class="*:pb-2 pt-10">
+                <h2>Thank you for your time and consideration.</h2>
+                <p>Sincerely, </p>
+                <p>Ehashanul Akter </p>
+
+            </div>
+
+        </article>
+    </main>
+    <main>
+        <div class="image-container">
+            <img id="tilt-image" class="image-tilt rounded-xl w-[550px] mt-4" src="assets/Ehashanul_pic.png" alt="">
+        </div>
+    </main>
+
+    <script>
+        const image = document.getElementById("tilt-image");
+        const container = image.parentElement;
+
+        container.addEventListener("mousemove", (e) => {
+            const rect = container.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const rotateX = ((y / rect.height) - 0.5) * -30;
+            const rotateY = ((x / rect.width) - 0.5) * 30;
+
+            image.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+
+        container.addEventListener("mouseleave", () => {
+            image.style.transform = "rotateX(0) rotateY(0)";
+        });
+    </script>
+
+</body>
+
+</html>
